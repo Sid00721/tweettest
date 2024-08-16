@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Tweet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #15202B;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .tweet-container {
+            background-color: #192734;
+            border: 1px solid #38444D;
+            border-radius: 20px;
+            width: 600px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        .tweet-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .tweet-header-left {
+            display: flex;
+            align-items: center;
+        }
+        .tweet-header-left img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .tweet-header-left .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .tweet-header-left .user-info .name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .tweet-header-left .user-info .handle {
+            color: #8899A6;
+            font-size: 15px;
+        }
+        .tweet-header-right button {
+            background-color: #FFFFFF;
+            color: black;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .tweet-header-right button:hover {
+            background-color: #E1E8ED;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tweet-content {
+            margin: 15px 0;
+            font-size: 22px;
+        }
+        .tweet-content .emoji {
+            font-size: 1.5em;
+        }
+        .tweet-footer {
+            display: flex;
+            justify-content: space-between;
+            color: #8899A6;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .tweet-footer span {
+            display: flex;
+            align-items: center;
+        }
+        .tweet-footer span i {
+            margin-right: 8px;
+        }
+        .tweet-footer-actions {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            border-top: 1px solid #38444D;
+            padding-top: 10px;
+        }
+        .tweet-footer-actions span {
+            display: flex;
+            align-items: center;
+            color: #8899A6;
+            cursor: pointer;
+        }
+        .tweet-footer-actions span i {
+            margin-right: 8px;
+        }
+        /* Like Button Animation */
+        .tweet-footer-actions .fa-heart:hover {
+            color: #E0245E; /* Change to Twitter heart red */
+            transform: scale(1.2); /* Scale the heart icon */
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        /* Retweet and Comment Icons Hover */
+        .tweet-footer-actions .fa-retweet:hover,
+        .tweet-footer-actions .fa-comment:hover {
+            color: #17BF63; /* Green for retweet */
+            transition: color 0.2s ease-in-out;
+        }
+        .tweet-footer-actions .fa-comment:hover {
+            color: #1DA1F2; /* Blue for comment */
+            transition: color 0.2s ease-in-out;
+        }
+        /* Ellipsis (More Options) Hover */
+        .tweet-footer .fa-ellipsis-h:hover {
+            color: #8899A6;
+            transition: color 0.2s ease-in-out;
+        }
+        /* Share Button Hover */
+        .tweet-footer-actions .fa-share:hover {
+            color: #1DA1F2; /* Blue for share */
+            transition: color 0.2s ease-in-out;
+        }
+    </style>
+    <!-- You may need to include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="tweet-container">
+        <div class="tweet-header">
+            <div class="tweet-header-left">
+                <img src="https://pbs.twimg.com/profile_images/1590968738358079488/IY9Gx6Ok_400x400.jpg" alt="Elon Musk">
+                <div class="user-info">
+                    <span class="name">Elon Musk <i class="fas fa-badge-check" style="color: #1DA1F2;"></i></span>
+                    <span class="handle">@elonmusk</span>
+                </div>
+            </div>
+            <div class="tweet-header-right">
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <div class="tweet-content">
+            Do we have great moves or what? <span class="emoji">🤣</span> <span class="emoji">⚡</span>
+        </div>
+        <div class="tweet-footer">
+            <span>12:59 AM · Aug 15, 2024 · <strong>1.1M</strong> Views</span>
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="tweet-footer-actions">
+            <span><i class="far fa-comment"></i> 1.8K</span>
+            <span><i class="fas fa-retweet"></i> 1.2K</span>
+            <span><i class="far fa-heart"></i> 16K</span>
+            <span><i class="far fa-bookmark"></i> 162</span>
+            <span><i class="fas fa-share"></i></span>
+        </div>
+    </div>
+</body>
+</html>
