@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twitter Clone</title>
+    <title>Twitter Clone Full Project</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -67,20 +67,22 @@
             flex-direction: column;
             overflow-y: auto;
             padding-left: 20px; /* Add padding to align content after the sidebar */
+            background-color: #000000; /* Black background to match the screenshot */
         }
-        .main-content .tweet-container {
-            background-color: #192734;
-            border: 1px solid #38444D;
-            border-radius: 20px;
+        .tweet-container {
+            background-color: #16181C; /* Darker background color for tweet section */
+            border: 1px solid #2F3336;
+            border-radius: 10px;
             width: 600px;
             margin: 20px auto;
             padding: 20px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
         .tweet-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding-bottom: 10px; /* Add padding for space between elements */
         }
         .tweet-header-left {
             display: flex;
@@ -88,9 +90,9 @@
         }
         .tweet-header-left img {
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
+            width: 48px; /* Adjusted size for profile image */
+            height: 48px;
+            margin-right: 12px; /* Add spacing between image and text */
         }
         .tweet-header-left .user-info {
             display: flex;
@@ -98,20 +100,21 @@
         }
         .tweet-header-left .user-info .name {
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px; /* Slightly smaller font for better alignment */
         }
         .tweet-header-left .user-info .handle {
             color: #8899A6;
-            font-size: 15px;
+            font-size: 14px; /* Adjusted font size */
         }
         .tweet-header-right button {
             background-color: #FFFFFF;
             color: black;
             border: none;
-            padding: 5px 15px;
+            padding: 6px 12px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 14px; /* Match the button size in the screenshot */
         }
         .tweet-header-right button:hover {
             background-color: #E1E8ED;
@@ -119,15 +122,18 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
         .tweet-content {
-            margin: 15px 0;
-            font-size: 22px;
+            margin: 12px 0;
+            font-size: 20px; /* Adjusted font size for tweet content */
+            line-height: 1.5; /* Line height to match spacing in the screenshot */
         }
         .tweet-footer {
             display: flex;
             justify-content: space-between;
             color: #8899A6;
-            font-size: 14px;
+            font-size: 14px; /* Adjusted font size for timestamp */
             margin-top: 10px;
+            border-top: 1px solid #2F3336; /* Added top border */
+            padding-top: 8px; /* Added padding above footer */
         }
         .tweet-footer span {
             display: flex;
@@ -139,28 +145,29 @@
         .tweet-footer-actions {
             display: flex;
             justify-content: space-around;
-            margin-top: 15px;
-            border-top: 1px solid #38444D;
-            padding-top: 10px;
+            margin-top: 10px;
+            border-top: 1px solid #2F3336;
+            padding-top: 8px;
         }
         .tweet-footer-actions span {
             display: flex;
             align-items: center;
             color: #8899A6;
             cursor: pointer;
+            font-size: 14px; /* Adjusted size for footer icons */
         }
         .tweet-footer-actions span i {
-            margin-right: 8px;
+            margin-right: 6px;
         }
 
         /* Replies Section */
         .replies-container {
-            background-color: #192734;
+            background-color: #16181C;
             width: 600px;
             margin: 20px auto;
-            padding: 10px 20px;
-            border: 1px solid #38444D;
-            border-radius: 20px;
+            padding: 15px 20px;
+            border: 1px solid #2F3336;
+            border-radius: 10px;
         }
         .reply {
             display: flex;
@@ -169,30 +176,56 @@
         }
         .reply img {
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+            width: 42px;
+            height: 42px;
+            margin-right: 12px;
         }
         .reply-content {
-            background-color: #253341;
-            padding: 10px;
-            border-radius: 10px;
+            background-color: transparent; /* Keep transparent to match Twitter's style */
+            padding: 0;
             flex: 1;
         }
         .reply-header {
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
         .reply-header .name {
             font-weight: bold;
+            font-size: 15px;
         }
         .reply-header .handle {
             color: #8899A6;
-            font-size: 13px;
+            font-size: 14px;
         }
         .reply-content p {
             margin: 5px 0;
             font-size: 16px;
+            line-height: 1.4; /* Match line height for replies */
+        }
+
+        /* Icons Hover Effects */
+        .tweet-footer-actions .fa-heart:hover {
+            color: #E0245E;
+            transform: scale(1.2);
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .tweet-footer-actions .fa-retweet:hover,
+        .tweet-footer-actions .fa-comment:hover {
+            color: #17BF63;
+            transition: color 0.2s ease-in-out;
+        }
+        .tweet-footer-actions .fa-comment:hover {
+            color: #1DA1F2;
+            transition: color 0.2s ease-in-out;
+        }
+        .tweet-footer .fa-ellipsis-h:hover {
+            color: #8899A6;
+            transition: color 0.2s ease-in-out;
+        }
+        .tweet-footer-actions .fa-share:hover {
+            color: #1DA1F2;
+            transition: color 0.2s ease-in-out;
         }
 
         /* Right Sidebar */
@@ -258,29 +291,6 @@
             font-weight: bold;
         }
 
-        /* Icons Hover Effects */
-        .tweet-footer-actions .fa-heart:hover {
-            color: #E0245E;
-            transform: scale(1.2);
-            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
-        }
-        .tweet-footer-actions .fa-retweet:hover,
-        .tweet-footer-actions .fa-comment:hover {
-            color: #17BF63;
-            transition: color 0.2s ease-in-out;
-        }
-        .tweet-footer-actions .fa-comment:hover {
-            color: #1DA1F2;
-            transition: color 0.2s ease-in-out;
-        }
-        .tweet-footer .fa-ellipsis-h:hover {
-            color: #8899A6;
-            transition: color 0.2s ease-in-out;
-        }
-        .tweet-footer-actions .fa-share:hover {
-            color: #1DA1F2;
-            transition: color 0.2s ease-in-out;
-        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -339,10 +349,11 @@
                 <img src="https://pbs.twimg.com/profile_images/1590968738358079488/IY9Gx6Ok_400x400.jpg" alt="Reply User">
                 <div class="reply-content">
                     <div class="reply-header">
-                        <span class="name">Jimmy Apples</span>
+                        <span class="name">Jimmy Apples <i class="fas fa-badge-check" style="color: #1DA1F2;"></i></span>
                         <span class="handle">@apples_jimmy · Aug 14</span>
                     </div>
                     <p>Sus-column-R was from X AI team all along.</p>
+                    <img src="https://your-image-url.jpg" alt="Meme Image" width="100%"> <!-- Example image within the reply -->
                 </div>
             </div>
             <!-- Add more replies here if needed -->
