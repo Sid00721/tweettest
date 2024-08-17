@@ -231,14 +231,14 @@
         /* Right Sidebar */
         .right-sidebar {
             width: 350px;
-            background-color: #192734;
+            background-color: #000000; /* Adjusted background color to match the screenshot */
             padding: 20px;
             border-left: 1px solid #38444D;
             display: flex;
             flex-direction: column;
         }
         .search-bar {
-            background-color: #253341;
+            background-color: #16181C;
             border: 1px solid #38444D;
             border-radius: 50px;
             padding: 10px;
@@ -255,15 +255,18 @@
             font-size: 16px;
             margin-left: 10px;
         }
-        .trending-section {
-            background-color: #253341;
-            border-radius: 15px;
+        .trending-section, .relevant-people {
+            background-color: #16181C;
+            border-radius: 15px; /* Adjusted border-radius for smoother corners */
             padding: 15px;
             margin-bottom: 20px;
+            border: 1px solid #38444D;
         }
-        .trending-section h3 {
+        .trending-section h3, .relevant-people h3 {
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 15px; /* Add some space below headers */
+            font-size: 18px; /* Adjusted font size for section headers */
+            font-weight: bold;
         }
         .trending-item {
             margin-bottom: 15px;
@@ -271,15 +274,20 @@
         .trending-item span {
             color: #8899A6;
         }
-        .relevant-people {
-            background-color: #253341;
-            border-radius: 15px;
-            padding: 15px;
+        .trending-item p {
+            margin: 5px 0;
+            font-weight: bold;
+            font-size: 16px; /* Adjusted font size for trending topics */
         }
         .relevant-person {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            justify-content: space-between;
+            padding: 10px 0; /* Add padding inside relevant people section */
+            border-bottom: 1px solid #38444D; /* Add separator between entries */
+        }
+        .relevant-person:last-child {
+            border-bottom: none; /* Remove border from the last item */
         }
         .relevant-person img {
             border-radius: 50%;
@@ -289,6 +297,24 @@
         }
         .relevant-person .name {
             font-weight: bold;
+            font-size: 16px; /* Adjust font size for names */
+        }
+        .relevant-person .handle {
+            color: #8899A6;
+            font-size: 14px;
+        }
+        .relevant-person button {
+            background-color: transparent;
+            border: 1px solid #1DA1F2;
+            border-radius: 15px;
+            padding: 5px 15px;
+            color: #1DA1F2;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .relevant-person button:hover {
+            background-color: #1A91DA;
+            color: white;
         }
 
     </style>
@@ -368,25 +394,6 @@
             <input type="text" placeholder="Search Twitter">
         </div>
 
-        <!-- Trending Section -->
-        <div class="trending-section">
-            <h3>What's happening</h3>
-            <div class="trending-item">
-                <span>Trending in Australia</span>
-                <p><strong>#Payman</strong></p>
-                <span>1,107 Posts</span>
-            </div>
-            <div class="trending-item">
-                <span>Entertainment - Trending</span>
-                <p><strong>Sydney Sweeney</strong></p>
-                <span>48.6K Posts</span>
-            </div>
-            <div class="trending-item">
-                <span>Esports World Cup 2024</span>
-                <p><strong>LIVE</strong></p>
-            </div>
-        </div>
-
         <!-- Relevant People Section -->
         <div class="relevant-people">
             <h3>Relevant people</h3>
@@ -396,8 +403,35 @@
                     <span class="name">Elon Musk</span><br>
                     <span class="handle">@elonmusk</span>
                 </div>
+                <button>Following</button>
             </div>
-            <!-- Add more relevant people here if needed -->
+        </div>
+
+        <!-- Trending Section -->
+        <div class="trending-section">
+            <h3>What's happening</h3>
+            <div class="trending-item">
+                <img src="https://via.placeholder.com/50" alt="Trending Image" style="width: 50px; border-radius: 8px;">
+                <p><strong>Esports World Cup 2024</strong><br>Esports · LIVE</p>
+            </div>
+            <div class="trending-item">
+                <span>Entertainment · Trending</span>
+                <p>Sydney Sweeney</p>
+                <span>49.8K posts</span>
+            </div>
+            <div class="trending-item">
+                <span>Sports · Trending</span>
+                <p>Zirkzee</p>
+                <span>173K posts</span>
+            </div>
+            <div class="trending-item">
+                <span>Trending in Australia</span>
+                <p>Nathan Cleary</p>
+            </div>
+            <div class="trending-item">
+                <span>Sports · Trending</span>
+                <p>Caitlin Clark</p>
+            </div>
         </div>
     </div>
 </body>
